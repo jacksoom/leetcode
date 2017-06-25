@@ -1,5 +1,9 @@
 package main
-import "fmt"
+
+import (
+	"fmt"
+	"reflect"
+)
 
 //twoSum in leetcode question 1
 func twoSum(nums []int, target int) []int {
@@ -18,7 +22,10 @@ func twoSum(nums []int, target int) []int {
 }
 
 func main(){
-	a := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
-	b:=twoSum(a,17)
-	fmt.Println(b[0],b[1])
+	var any interface{}
+	s:=any.(Stringer)
+	fmt.Println(reflect.TypeOf(s))
+}
+type Stringer interface {
+	String() string
 }
